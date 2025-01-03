@@ -1,0 +1,82 @@
+body {
+	margin: 0;
+	background: radial-gradient(circle, #020111, #000000);
+	overflow: hidden;
+	height: 100vh;
+	cursor: pointer;
+	font-family: "Arial", sans-serif;
+	color: white;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+/* Add large instruction text */
+.instructions {
+	font-size: 2rem;
+	font-weight: bold;
+	z-index: 10;
+	color: #ff9671;
+	text-shadow: 1px -1px 7px rgb(142 142 142 / 80%);
+}
+
+.projectile {
+	position: absolute;
+	width: 12px;
+	height: 12px;
+	background: white;
+	border-radius: 50%;
+	box-shadow: 0 0 20px rgba(255, 255, 255, 0.8),
+		0 0 30px rgba(255, 255, 255, 0.6), 0 0 40px rgba(255, 255, 255, 0.4);
+	transform: translate(-50%, -50%); /* Đảm bảo căn giữa */
+}
+
+.particle {
+	position: absolute;
+	font-size: 2rem;
+	font-family: "Times New Roman", Times, serif;
+	font-weight: bold;
+	color: white;
+	transform: translate(-50%, -50%); /* Đảm bảo căn giữa */
+	opacity: 0;
+}
+
+.sparkle {
+	position: absolute;
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: white;
+	transform: translate(-50%, -50%); /* Đảm bảo căn giữa */
+	opacity: 0;
+}
+
+.heart {
+	position: absolute;
+	margin-top: 10px;
+	transform: translate(-50%, -50%);
+	opacity: 0;
+}
+
+.heart::before, .heart::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	width: 52px;
+	height: 80px;
+	border-radius: 50px 50px 0 0;
+}
+
+.heart::before {
+	left: 50px;
+	transform: rotate(-45deg);
+	transform-origin: 0 100%;
+}
+
+.heart::after {
+	left: 0;
+	transform: rotate(45deg);
+	transform-origin: 100% 100%;
+}
